@@ -1,16 +1,14 @@
 $port = 9090
-$filePath = "C:\Users\lucas\Downloads\ps-playground\data.json"
+$filePath = "E:\Github\ps-playground\data.json"
 
 # Initialize the HttpListener
 $httpListener = New-Object System.Net.HttpListener
 
-# Ensure it only binds to localhost for security
 $httpListener.Prefixes.Add("http://localhost:$port/")
 
 # Start the listener
 $httpListener.Start()
 
-# Function to handle incoming requests
 function HandleRequest {
     param($context)
     try {
